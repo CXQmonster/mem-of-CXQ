@@ -1,0 +1,70 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+//long long peb_print(int n)
+//{
+//	if (n <= 2)
+//		return 1;
+//	else
+//		return peb_print(n - 1) + peb_print(n - 2);
+//}
+/*int main()
+{
+	int a = 0;
+	printf("please input a number");
+	scanf("%d", &a);
+    long long b=peb_print(a);
+	printf("%lld", b);
+	return 0;
+}*///第n个佩波纳契数
+//int main()
+//{
+//	int a = 0;
+//	int i = 0;
+//	printf("please input a number");
+//	scanf("%d", &a);
+//	for (i = 1; i <= a; i++)
+//	{
+//		long long b = peb_print(i);
+//		printf("%lld\n", b);
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 3;
+//	a -= 1;
+//	printf("%d", a);
+//
+//	return 0;
+//}
+
+int fib(int n)
+{
+	int result;
+	int pre_result;
+	int next_older_result;
+	result = pre_result = 1;
+	while (n > 2)
+	{
+		n -= 1;
+		next_older_result = pre_result;
+		pre_result = result;
+		result = pre_result + next_older_result;
+	}
+	return result;
+}//佩波纳契数列
+int main()
+{
+	int n = 0;
+	int i = 0;
+	printf("please input a number");
+	scanf("%d", &n);
+	
+	for (i = 1; i <= n; i++)//输出到第n个
+	{
+		unsigned long long a = fib(i);
+		printf("%llu\n", a);
+	}
+	return 0;
+}
